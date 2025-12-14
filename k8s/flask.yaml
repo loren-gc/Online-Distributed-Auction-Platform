@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+spec:
+  type: ClusterIP # No Kind, usamos Port-Forward depois, é mais seguro
+  selector:
+    app: flask-app
+  ports:
+    - port: 80       # Porta externa do serviço
+      targetPort: 5000 # Porta interna do container
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,8 +26,8 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: lorengc/leilao-flask:v1
-        imagePullPolicy: Always 
+        image: lorengc/leilao-app:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
@@ -23,3 +35,6 @@ spec:
           value: "redis-service"
         - name: REDIS_PORT
           value: "6379"
+        resources:
+          requests:
+            cpu: "100m"
