@@ -1,0 +1,5 @@
+k8s/
+Dockerfile
+README.md
+.git
+__pycache__
