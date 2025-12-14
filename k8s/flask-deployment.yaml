@@ -14,9 +14,8 @@ spec:
     spec:
       containers:
       - name: flask-container
-        # Por enquanto usamos uma imagem comentada para depois substituir pela imagem certa
-        #image: python:3.9-slim 
-        command: ["sleep", "3600"]
+        image: leilao-flask:v1
+        imagePullPolicy: Never 
         ports:
         - containerPort: 5000
         env:
@@ -24,6 +23,3 @@ spec:
           value: "redis-service"
         - name: REDIS_PORT
           value: "6379"
-        resources:
-          requests:
-            cpu: "100m"
