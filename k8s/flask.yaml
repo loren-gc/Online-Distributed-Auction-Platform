@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: flask-service
 spec:
-  type: ClusterIP # No Kind, usamos Port-Forward depois, é mais seguro
+  type: ClusterIP
   selector:
     app: flask-app
   ports:
-    - port: 80       # Porta externa do serviço
+    - port: 80 # Porta externa do serviço
       targetPort: 5000 # Porta interna do container
 ---
 apiVersion: apps/v1
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: lorengc/leilao-app:v1
+        image: lorengc/leilao-app:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
