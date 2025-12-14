@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: leilao-flask:v1
-        imagePullPolicy: Never 
+        image: lorengc/leilao-flask:v1
+        imagePullPolicy: Always 
         ports:
         - containerPort: 5000
         env:
