@@ -9,7 +9,7 @@ def get_redis_connection():#função para criar uma conexão com redis
     try:
         r = redis.Redis(host=REDIS_HOST,
                         port =REDIS_PORT,
-                        DB=REDIS_DB,
+                        db=REDIS_DB,
                         decode_responses=True)#recebo strings e nao bytes
         return r
     except Exception as e:
