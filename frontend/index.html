@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leilão Distribuído</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Plataforma de Leilão Online</h1>
+    
+    <div class="card">
+        <h2>Criar Novo Leilão</h2>
+        <form onsubmit="createAuction(event)">
+            <input type="text" id="title" placeholder="Título do Item" required>
+            <input type="text" id="desc" placeholder="Descrição">
+            <input type="number" id="price" placeholder="Preço Inicial" required>
+            <input type="text" id="creator" placeholder="Seu Nome" required>
+            <button type="submit">Criar Leilão</button>
+        </form>
+    </div>
+
+    <h2>Leilões Ativos</h2>
+    <div id="auctions-list">Carregando...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
