@@ -26,8 +26,8 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: lorengc/leilao-app:v3
-        imagePullPolicy: Always
+        image: lorengc/leilao-app:v4
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
         env:

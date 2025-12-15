@@ -1,3 +1,4 @@
 flask
 redis
-python-dotenv
+flask-cors
+gunicorn
