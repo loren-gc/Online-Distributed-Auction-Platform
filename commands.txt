@@ -1,0 +1,23 @@
+-- creating the cluster:
+	kind create cluster --name projeto-sd
+
+-- install metrics (auto-scaling)
+	kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+-- redis
+	kubectl apply -f k8s/redis.yaml
+
+-- flask
+	kubectl apply -f k8s/flask.yaml
+
+-- activating Auto-Scaling (HPA)
+	kubectl apply -f k8s/hpa.yaml
+	
+-- Checking if teh pods are running:
+	kubectl get pods
+
+-- portforward to port 8080:
+	kubectl port-forward service/flask-service 8080:80
+
+-- open in browser:
+	localhost:8080
