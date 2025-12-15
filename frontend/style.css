@@ -1,9 +1,0 @@
-body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; }
-.card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
-button { background-color: #28a745; color: white; border: none; cursor: pointer; }
-button:hover { background-color: #218838; }
-.bid-history { max-height: 200px; overflow-y: auto; background: #eee; padding: 10px; }
-.bid-item { border-bottom: 1px solid #ddd; padding: 5px 0; }
-.error { color: red; }
-.success { color: green; }
